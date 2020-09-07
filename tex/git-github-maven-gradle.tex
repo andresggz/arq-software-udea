@@ -3,16 +3,19 @@
 
 \renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}
 
-%\title{Git \& Github, Mave \& Gradle}
-\author{Cristian Camilo Serna Betancur \\\\ Andres Grisales}
+\title{Git \& GitHub, Maven \& Gradle}
+\author{\\\\ Cristian Camilo Serna Betancur \\\\ Andres Grisales Gonzales}
 
 \begin{document}
-%\maketitle
+\maketitle
+\tableofcontents
 
 \section{Git}
 Git is a \emph{free and open source} distributed version control system designed 
 to handle everything from small to very large projects with speed and efficiency
-\cite{git}. 
+\cite{git}. It was created by Linus Torvalds in 2005 for development of the 
+\emph{Linux kernel}, with other kernel developers contributing to its initial 
+development. Since 2005, Junio Hamano has been the core maintainer\cite{gita}.
 
 It allows us to read the history of the project, its changes, and the thoughts 
 of the person who worked in them \footnote{Although sometimes we don't write 
@@ -24,26 +27,33 @@ work is done, reliable, and ready to use.
 
 \section{Github}
 GitHub, Inc. is an American multinational corporation that provides hosting for 
-software development and version control using Git\cite{github}. It provides 
-many features such as pull request (PR), bug tracking, task manager, and wikis 
-for every project. These things allow us to improve our own projects or helping 
-different projects, giving an receiving feedback, report issues and share 
-knowledge, and ideas.
+software development and version control using Git\cite{github}. It has many 
+features such as pull request (PR), bug tracking, task manager, and wikis for 
+every project. It is one of the most important hosting providers for free and 
+open source projects, since it hosts very important ones.
+
+With GitHub we can improve our own projects and help on different ones, giving 
+an receiving feedback, report issues and share knowledge, and ideas. We can use
+hosted continous integration services such as Travis CI with it that enables us
+to test and ship our apps with confidence\cite{travis}.
 
 Git $+$ GitHub offer us an easy way to work with many people at the same project
 \footnote{Since I've learned how to use Git and GitHub (GitHub or GitLab or 
 Bitbucket, who cares) I've not been able to figure a different way to work with 
 more than one person at the same project.}, does'nt matter if even we are in 
-different countries, we can share our code and ideas with everyone.
+different countries, we can share our code and ideas with everyone in the world.
 
-%GitHub allows us to work with many people from many different
-%countries into the same project, sharing knowlegde, issues and ideas.
+
 
 \begin{thebibliography}{99}
     % https://git-scm.com/
     \bibitem{git} H.~Part1: \emph{Germa \TeX}, TUGboat Volume~9, Issue~1(1988) 
+     % https://en.wikipedia.org/wiki/Git
+    \bibitem{gita} H.~Part1: \emph{Germa \TeX}, TUGboat Volume~9, Issue~1(1988) 
     % https://en.wikipedia.org/wiki/GitHub
     \bibitem{github} H.~Part1: \emph{Germa \TeX}, TUGboat Volume~9, Issue~1(1988) 
+    %https://github.com/marketplace/travis-ci
+    \bibitem{travis} H.~Part1: \emph{Germa \TeX}, TUGboat Volume~9, Issue~1(1988) 
 \end{thebibliography}
 
 \end{document}
