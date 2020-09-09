@@ -1,7 +1,9 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage[colorlinks=true,linkcolor=blue,allcolors=red]{hyperref}
+\usepackage{biblatex}
 
 \renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}
+\bibliography{git-github-mave-gradle} 
 
 \title{Git \& GitHub, Maven \& Gradle}
 \author{\\\\ Cristian Camilo Serna Betancur \\\\ Andres Grisales Gonzalez}
@@ -13,9 +15,9 @@
 \section{Git}
 Git is a \emph{free and open source} distributed version control system designed 
 to handle everything from small to very large projects with speed and efficiency
-\cite{git}. It was created by Linus Torvalds in 2005 for development of the 
+\cite{GIT:1}. It was created by Linus Torvalds in 2005 for development of the 
 \emph{Linux kernel}, with other kernel developers contributing to its initial 
-development. Since 2005, Junio Hamano has been the core maintainer\cite{gita}.
+development. Since 2005, Junio Hamano has been the core maintainer\cite{GIT:2}.
 
 It allows us to read the history of the project, its changes, and the thoughts 
 of the person who worked in them \footnote{Although sometimes we don't write 
@@ -27,15 +29,15 @@ work is done, reliable, and ready to use.
 
 \section{Github}
 GitHub, Inc. is an American multinational corporation that provides hosting for 
-software development and version control using Git\cite{github}. It has many 
+software development and version control using Git\cite{GITHUB:1}. It has many 
 features such as pull request (PR), bug tracking, task manager, and wikis for 
 every project. It is one of the most important hosting providers for free and 
 open source projects, since it hosts very important ones.
 
 With GitHub we can improve our own projects and help on different ones, giving 
 an receiving feedback, report issues and share knowledge, and ideas. We can use
-hosted continous integration services such as Travis CI with it that enables us
-to test and ship our apps with confidence\cite{travis}.
+hosted continuous integration services such as Travis CI with it that enables us
+to test and ship our apps with confidence\cite{TRAVIS:1}.
 
 Git $+$ GitHub offer us an easy way to work with many people at the same project
 \footnote{Since I've learned how to use Git and GitHub (GitHub or GitLab or 
@@ -46,7 +48,7 @@ different countries, we can share our code and ideas with everyone in the world.
 \section{Maven}
 Maven is a build automation tool used primarily for Java projects. Maven can 
 also be used to build and manage projects written in Java, C\#, Ruby, Scala, 
-and other languages\cite{Maven}. It is an excellent tool for Java developers 
+and other languages\cite{MAVEN:1}. It is an excellent tool for Java developers 
 and it is also possible to use it to manage the lifecycle of your projects.
 
 As a life cycle management tool, Maven works around phases. It handles all 
@@ -59,7 +61,7 @@ felt most comfortable; Maven is simple.}.
 In Maven a Project Object Model or POM is the fundamental unit of work in Maven.
 It is an XML file that contains information about the project and configuration
 details used by Maven to build the project. It contains default values for most
-projects\cite{Apache}.
+projects\cite{APACHE:1}.
 
 One of Maven's most useful resources is its dependency management support: you 
 simply define the libraries on which your application depends and Maven locates
@@ -71,7 +73,7 @@ internet and if that can't, it's useless.}.
 \section{Gradle}
 Gradle is a build automation tool for multi-language software development. It 
 controls the development process in the tasks of compilation and packaging to 
-testing, deployment, and publishing\cite{Gradle}\footnote{Gradle build scripts 
+testing, deployment, and publishing\cite{GRADLE:1}\footnote{Gradle build scripts 
 are written using Groovy or Kotlin DSL (Domain Specific Language). Gradle has 
 great flexibility and allows us to make uses of other languages and not just 
 Java, it also has a very stable dependency management system.}. Gradle is 
@@ -87,7 +89,7 @@ Java, packaging and distribution of JAR, WAR and EAR, daemon compiler.
 Gradle allows you to build from microservices to mobile applications, it can 
 be used by small startups as well as large companies, as it helps teams 
 develop, automate and deliver quality software in a shorter time (depending on 
-its complexity and prior planning of the development process)\cite{Gradle}.
+its complexity and prior planning of the development process)\cite{GRADLE:1}.
 
 \section{Maven vs Gradle}
 Both build systems offer built-in ability to resolve configurable repository 
@@ -98,26 +100,8 @@ endless configuration XML files and make way for something more modern and
 powerful like Gradle. Gradle is more powerful. However, there are times that 
 you really do not need most of the features and functionalities it offers. 
 Maven might be best for small projects, while Gradle is best for bigger 
-projects\cite{DZone}.
+projects\cite{DZONE:1}.
 
-\begin{thebibliography}{99}
-    % https://git-scm.com/
-    \bibitem{git} H.~Part1: \emph{Germa \TeX}, TUGboat Volume~9, Issue~1(1988) 
-     % https://en.wikipedia.org/wiki/Git
-    \bibitem{gita} H.~Part1: \emph{Germa \TeX}, TUGboat Volume~9, Issue~1(1988) 
-    % https://en.wikipedia.org/wiki/GitHub
-    \bibitem{github} H.~Part1: \emph{Germa \TeX}, TUGboat Volume~9, Issue~1(1988) 
-    %https://github.com/marketplace/travis-ci
-    \bibitem{travis} H.~Part1: \emph{Germa \TeX}, TUGboat Volume~9, Issue~1(1988) 
-
-    %https://dzone.com/articles/gradle-vs-maven#:~:text=Gradle%20is%20based%20on%20a,things%20that%20do%20the%20work.%E2%80%9D
-    \bibitem{DZone} H.~Part1: \emph{Germa \TeX}, TUGboat Volume~9, Issue~1(1988) 
-    %https://gradle.org/
-    \bibitem{Gradle} H.~Part1: \emph{Germa \TeX}, TUGboat Volume~9, Issue~1(1988) 
-    %https://maven.apache.org/
-    \bibitem{Maven} H.~Part1: \emph{Germa \TeX}, TUGboat Volume~9, Issue~1(1988) 
-    %https://en.wikipedia.org/wiki/Apache_Maven
-    \bibitem{Apache} H.~Part1: \emph{Germa \TeX}, TUGboat Volume~9, Issue~1(1988) 
-\end{thebibliography}
-
+\newpage
+\printbibliography
 \end{document}
