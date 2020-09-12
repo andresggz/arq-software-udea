@@ -1,12 +1,11 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage[colorlinks=true,linkcolor=blue,allcolors=red]{hyperref}
-\usepackage{biblatex}
 
 \renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}
-\bibliography{git-github-mave-gradle} 
 
 \title{Git \& GitHub, Maven \& Gradle}
-\author{\\\\ Cristian Camilo Serna Betancur \\\\ Andres Grisales Gonzalez  \\\\ John Fredy Mejia Serna}
+\author{\\\\ Cristian Camilo Serna Betancur \\\\ Andres Grisales Gonzalez  
+\\\\ John Fredy Mejia Serna}
 
 \begin{document}
 \maketitle
@@ -103,5 +102,6 @@ Maven might be best for small projects, while Gradle is best for bigger
 projects\cite{DZONE:1}.
 
 \newpage
-\printbibliography
+\bibliography{git-github-maven-gradle}{}
+\bibliographystyle{plain}
 \end{document}
