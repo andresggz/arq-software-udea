@@ -1,14 +1,18 @@
 #!/usr/bin/bash
-# destroy all the files that pdflatex tool generates when it compiles:
-# - *.aux
-# - *.log
-# - *.out
-# - *.toc
-# + *.pdf [this one isn't destroyed]
-find ./ -type  f \( \
-    -name \*.aux -o \
-    -name \*.log -o \
-    -name \*.out -o \
-    -name \*.toc    \
-    \) -exec echo destroyed: {} \; -exec rm {} \;
 
+# destroy eliminate all the files that pdflatex and bibtex 
+# tools generate. All the documents inside docs will be ignored.
+find ./ -type d -name docs -prune -o \
+    -type f \( \
+    -name \*.aux  -o \
+    -name \*.log  -o \
+    -name \*.out  -o \
+    -name \*.toc  -o \
+    -name \*.bbl  -o \
+    -name \*.bcf  -o \
+    -name \*.blg  -o \
+    -name \*.pdf  -o \
+    -name \*.dvi  -o \
+    -name \*x.bib -o \
+    -name \*.\*n.xml \
+    \) -exec echo destroyed: {} \; -exec rm {} \;
