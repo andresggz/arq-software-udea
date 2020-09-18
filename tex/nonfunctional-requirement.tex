@@ -74,6 +74,10 @@ software, cuando nos encontremos con dependencias cíclicas debemos sentarnos un
 rato y pensar como modificamos ya sea la ubicación de clases dentro paquetes de 
 manera que podamos romper esa ciclicidad que es dañina.  
 
+
+  
+
+
 \subsection{Ejemplos}
 \begin{figure}[!h]
     \centering
@@ -92,6 +96,14 @@ manera que podamos romper esa ciclicidad que es dañina.
     \includegraphics[scale=.5]{assets/gc1.png}
     \caption{Esto está bastante bien.}
 \end{figure}
+
+
+\section{Intercambiabilidad}
+Capacidad del producto software para ser usado en lugar de otro producto
+software,para el mismo proposito,en el mismo entorno.
+Es la habilidad de que un objeto puede ser reemplazado por otro sin afectar el código que usa el objeto.
+Esa posibilidad generalmente requiereque dos objetos compartan
+una interfaz que sea estrictamente igual o compatible en un caso particular.
 
 \section{Sustituibilidad}
 Buscamos la capacidad de \emph{substitución} correcta de subtipos de una clase, 
