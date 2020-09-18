@@ -57,15 +57,12 @@ que ven la interfaz.
 ¿Pueden los usuarios volver a la interfaz después de un tiempo y comenzar a 
 trabajar de manera eficiente con ella de inmediato?
 
-\section{Desacoplamiento}
-Cuando hablamos de \emph{acoplamiento} nos referimos a la relación entre dos 
-entidades en un sistema de software (generalmente clases).  Cuando una clase 
-usa otra clase, o se comunica con ella, se dice que ``depende" de esa otra 
-clase, por lo que estas clases están ``acopladas". Al menos uno de ellos 
-``sabe" sobre el otro. La idea es que deberíamos tratar de mantener el 
-acoplamiento entre clases en nuestros sistemas lo más ``flojo" posible: de ahí 
-``acoplamiento suelto" o, a veces ``desacoplamiento". De esta forma, una de las 
-tantas maneras para evitar este acoplamiento, es el uso de interfaces.
+\section{Intercambiabilidad}
+Capacidad del producto software para ser usado en lugar de otro producto 
+software,para el mismo proposito,en el mismo entorno. Es la habilidad de que un 
+objeto puede ser reemplazado por otro sin afectar el código que usa el objeto.  
+Esa posibilidad generalmente requiereque dos objetos compartan una interfaz que 
+sea estrictamente igual o compatible en un caso particular.
 
 \section{Aciclicidad}
 Con la \emph{aciclicidad} buscamos evitar dependencias cíclicas entre clases y 
@@ -73,11 +70,7 @@ entre paquetes, es una muy buena métrica para medir la mantenibilidad del
 software, cuando nos encontremos con dependencias cíclicas debemos sentarnos un 
 rato y pensar como modificamos ya sea la ubicación de clases dentro paquetes de 
 manera que podamos romper esa ciclicidad que es dañina.  
-
-
   
-
-
 \subsection{Ejemplos}
 \begin{figure}[!h]
     \centering
@@ -97,13 +90,15 @@ manera que podamos romper esa ciclicidad que es dañina.
     \caption{Esto está bastante bien.}
 \end{figure}
 
-
-\section{Intercambiabilidad}
-Capacidad del producto software para ser usado en lugar de otro producto
-software,para el mismo proposito,en el mismo entorno.
-Es la habilidad de que un objeto puede ser reemplazado por otro sin afectar el código que usa el objeto.
-Esa posibilidad generalmente requiereque dos objetos compartan
-una interfaz que sea estrictamente igual o compatible en un caso particular.
+\section{Desacoplamiento}
+Cuando hablamos de \emph{acoplamiento} nos referimos a la relación entre dos 
+entidades en un sistema de software (generalmente clases).  Cuando una clase 
+usa otra clase, o se comunica con ella, se dice que ``depende" de esa otra 
+clase, por lo que estas clases están ``acopladas". Al menos uno de ellos 
+``sabe" sobre el otro. La idea es que deberíamos tratar de mantener el 
+acoplamiento entre clases en nuestros sistemas lo más ``flojo" posible: de ahí 
+``acoplamiento suelto" o, a veces ``desacoplamiento". De esta forma, una de las 
+tantas maneras para evitar este acoplamiento, es el uso de interfaces.
 
 \section{Sustituibilidad}
 Buscamos la capacidad de \emph{substitución} correcta de subtipos de una clase, 
