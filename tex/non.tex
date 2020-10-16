@@ -1,0 +1,69 @@
+\documentclass{article}
+%%%%%%% PACKAGES %%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{blindtext}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{notoccite} %citation number ordering
+\usepackage{lscape} %landscape table
+\usepackage{caption} %add a newline in the table caption
+\usepackage[
+    backend=biber,  %references format (IEEE)
+    style=ieee,
+    sorting=none
+]{biblatex}
+\addbibresource{refs.bib} %rename this to your own bibliography
+\onehalfspace   % 1.5 line spacing
+\title{\huge{\textbf{RTF: Transportation Device Tracking}} \\
+\LARGE{EQUIPO: IO}}
+\author{Cristian Camilo Serna Betancur \\ Andres Grisales Gonzalez \\ John Fredy Mejia Serna}
+\begin{document}
+\pagenumbering{roman} % Start roman numbering
+\clearpage
+
+\maketitle
+
+\thispagestyle{empty}
+
+\begin{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=7cm]{pics/udea.png}%
+    \label{fig:logo}\end{figure}
+    \large{Facultad de Ingenieria, Departamento de Ingenieria de Sistemas,
+     Arquitectura de Software \\ Supervisor: Robinson Coronado}
+\end{center}
+
+\newpage
+
+\setcounter{page}{1}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\pagenumbering{arabic} % Start roman numbering%%% CONTENT HERE %%%%
+
+\section{Descripción del proyecto}
+Construcción de un Software como un Servicio (SaaS) que le permita a compañías de transporte hacer monitoreo satelital de sus vehículos de carga pesada.
+
+\section{Objetivos y alcance} 
+El objetivo de TDT es ofrecerle a las compañías que tienen redes de transporte pesado poder hacer tracking a sus vehículos desde nuestro sistema. En TDT nuestros empleados podrán registrar compañías que tienen una cabeza (jefe) y empleados designados por el jefe que interactúan con nuestro sistema en su dashboard registrando vehículos, creando y asociando flotas a vehículos, programando viajes para los vehículos, etc. a estos viajes se les hará tracking de forma que cada 60 segundos el vehículo que esté realizando un viaje enviará su ubicación y estas serán monitoreadas por los empleados de las respectivas compañías. TDT tendrá un sistema de analítica que recogerá información de las compañías, flotas, vehículos, viajes, reportes de ubicación, etc., para hacer análisis e implementar modelos que generen información valiosa para tomar decisiones de negocio y estratégicas para las compañías.
+
+\section{Stakeholders}
+
+\begin{itemize}
+    \item{Admin} es el o los administradores de la plataforma Transportation Device Tracking.
+    \item{Employees} son los empleados de TDT que pueden, por ejemplo, registrar la compañías de los clientes.
+    \item{Bosses} son los jefes (cabezas) de las compañías que hacen uso de nuestros servicios.
+    \item{Operators} son los empleados de las compañías que están registradas en nuestro sistema y son registrados por sus respectivos jefes.
+    \item{Drivers} son los conductores de los vehículos que realizan los viajes.
+\end{itemize}
+
+
+\end{document}
+
+\newpage
+\setstretch{1}  %reduce bibliography line spacing
+\printbibliography
+\end{document}
