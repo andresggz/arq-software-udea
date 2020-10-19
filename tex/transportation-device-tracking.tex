@@ -43,10 +43,10 @@
 
 \pagenumbering{arabic} % Start roman numbering%%% CONTENT HERE %%%%
 
-\section{Descripción del proyecto}
+\section{Descripción del Proyecto}
 Construcción de un Software como un Servicio (SaaS) que le permita a compañías de transporte hacer monitoreo satelital de sus vehículos de carga pesada.
 
-\section{Objetivos y alcance} 
+\section{Objetivos y Alcance} 
 El objetivo de TDT es ofrecerle a las compañías que tienen redes de transporte pesado poder hacer tracking a sus vehículos desde nuestro sistema. En TDT nuestros empleados podrán registrar compañías que tienen una cabeza (jefe) y empleados designados por el jefe que interactúan con nuestro sistema en su dashboard registrando vehículos, creando y asociando flotas a vehículos, programando viajes para los vehículos, etc. a estos viajes se les hará tracking de forma que cada 60 segundos el vehículo que esté realizando un viaje enviará su ubicación y estas serán monitoreadas por los empleados de las respectivas compañías. TDT tendrá un sistema de analítica que recogerá información de las compañías, flotas, vehículos, viajes, reportes de ubicación, etc., para hacer análisis e implementar modelos que generen información valiosa para tomar decisiones de negocio y estratégicas para las compañías.
 
 \newpage
@@ -66,8 +66,7 @@ El objetivo de TDT es ofrecerle a las compañías que tienen redes de transporte
     \item Drivers: son los conductores de los vehículos que realizan los viajes.
 \end{itemize}
 
-\section{Requisitos como historias de usuario}
-
+\section{Requisitos Como Historias de Usuario}
 \subsection{Autenticarse}
 \subsubsection{Descripción}
 Como Usuario quiero iniciar en la plataforma para interactuar con el sistema según los roles que tenga asociados.
@@ -77,10 +76,10 @@ Como Usuario quiero iniciar en la plataforma para interactuar con el sistema seg
     \item Dado que estoy en la vista para loguearme, cuando ingrese la información de verificación errónea, entonces el sistema me solicitará que rellene nuevamente los campos.
 \end{itemize}
 
-\subsection{Registrar compañía}
+\subsection{Registrar Compañía}
 \subsubsection{Descripción} 
 Como Administrador quiero registrar compañías para que los empleados de la misma puedan hacer rastreos de sus vehículos.
-\subsubsection{Criterios de aceptación} 
+\subsubsection{Criterios de Aceptación} 
 \begin{itemize}
     \item Dado que estoy a la vista para crear una compañía, cuando la esté creando, entonces debo ingresar su nombre, descripción, logo, información de contacto.
     \item Dado que estoy en la vista para crear una compañía, cuando esté ingresando la información de contacto, entonces debería ingresar el primer email, segundo email, primer número de contacto, y segundo número de contacto.
@@ -88,19 +87,19 @@ Como Administrador quiero registrar compañías para que los empleados de la mis
     \item Dado que estoy en la vista para crear una compañía, cuando la salve, entonces veré una notificación que me indica que la compañía fue creada.
 \end{itemize}
 
-\subsection{Registrar operador}
+\subsection{Registrar Operador}
 \subsubsection{Descripción}
 Como Jefe de una compañía, quiero registrar operadores para que puedan hacer uso del sistema y cumplan sus funciones.
-\subsubsection{Criterios de aceptación}
+\subsubsection{Criterios de Aceptación}
 \begin{itemize}
     \item Dado que estoy en la vista para registrar un empleado de mi compañía, cuando seleccione la opción de registrar un operador, entonces se desplegará los campos: nombre, apellido, correo electrónico principal y número de teléfono de contacto.
     \item Dado que tenga listo cada campo de información del empleado que quiero crear, cuando presione el botón para crear, entonces los campos serán limpiados y no se hará ninguna redirección de página, además me mostrará que el empleado ha sido registrado correctamente y ahora podrá iniciar sesión.
 \end{itemize}
 
-\subsection{Registrar flota}
+\subsection{Registrar Flota}
 \subsubsection{Descripción}
 Como Operador quiero registrar flotas para, posteriormente, asociar vehículos a las flotas de mi compañía y tener todo bien organizado.
-\subsubsection{Criterios de aceptación}
+\subsubsection{Criterios de Aceptación}
 \begin{itemize}
     \item Dado que estoy a la vista para crear una flota, cuando la esté creando, entonces debo ingresar su nombre y objetivo.
     \item Dado que estoy en la vista para crear una flota, cuando la salve, entonces a esa flota se le podrá asociar vehículos y viajes.
@@ -110,7 +109,7 @@ Como Operador quiero registrar flotas para, posteriormente, asociar vehículos a
 \subsection{Registrar Vehículo}
 \subsubsection{Descripción} 
 Como Operador quiero registrar los vehículos de la compañía para poder hacerle seguimiento a cada uno de ellos cuando realicen viajes.
-\subsubsection{Criterios de aceptación}
+\subsubsection{Criterios de Aceptación}
 \begin{itemize}
     \item Dado que estoy en la vista para registrar un vehículo, cuando lo esté creando, debo ingresar el número de licencia, placa y modelo.
     \item Dado que estoy estoy registrando un vehículo, cuando lo salve, debo poder asociar viajes que realizará ese vehículo.
@@ -120,62 +119,62 @@ Como Operador quiero registrar los vehículos de la compañía para poder hacerl
 \subsection{Programar Viaje}
 \subsubsection{Descripción}
 Como Operador quiero programar viajes en el sistema para hacerle rastreo al vehículo que realiza determinado viaje.
-\subsubsection{Criterios de aceptación}
+\subsubsection{Criterios de Aceptación}
 \begin{itemize}
     \item Dado que estoy en la vista para registrar un viaje, cuando esté ingresando la información, entonces debo ingresar el origen, destino, fecha y hora de salida, fecha y hora de llegada potencial.
     \item Dado que estoy en la vista para registrar un vehículo, cuando lo salve, entonces veré una notificación que me indica que el viaje fue salvado satisfactoriamente.
     \item Dado que estoy en la vista de un viaje, cuando la esté modificando, podré asociar un vehículo a ese viaje, podrá ver el historial de los reportes de ubicación de ese viaje, ingresar fecha y hora en la que partió el vehículo, fecha y hora en la que llegó el vehículo a destino.
 \end{itemize}
 
-\subsection{Registrar reporte de ubicación}
+\subsection{Registrar Reporte de Ubicación}
 \subsubsection{Descripción} 
 Como cliente quiero que cuando un vehículo envíe un reporte de ubicación, este sea registrado al viaje correspondiente, para poder efectivamente hacer rastreo de los viajes que realizan los vehículos.
-\subsubsection{Criterios de aceptación}
+\subsubsection{Criterios de Aceptación}
 \begin{itemize}
     \item Dado que un reporte de ubicación llega al sistema del viaje xyx y se le asigna el id 3qq2, cuando visualice el historial de reportes del viaje xyx, entonces veré un reporte de ubicación con id 3qq2 que indica la fecha y hora del registro, latitud, longitud, país, estado, y ciudad.
 \end{itemize}
 
-\subsection{Rastrear simultáneamente}
+\subsection{Rastrear Simultáneamente}
 \subsubsection{Descripción} 
 Como operador quiero obtener, de manera simultánea, la posición de los distintos vehículos que se encuentran próximos en determinada ciudad para obtener una visión más amplia de los envíos que están en proceso de transporte.
-\subsubsection{Criterios de aceptación}
+\subsubsection{Criterios de Aceptación}
 \begin{itemize}
     \item Dado que estoy en la vista para monitorear los distintos vehículos de la empresa, cuando seleccione una ciudad específica, entonces veré en un mapa los diferentes puntos que representan la posición de los distintos vehículos de la empresa que se encuentra allí.
 \end{itemize}
 
-\subsection{Visualizar compañías}
+\subsection{Visualizar Compañías}
 \subsubsection{Descripción}
 Como administrador quiero visualizar en el dashboard la lista de compañías que están registradas en el sistema para desde allí acceder a la información de las que desee.
-\subsubsection{Criterios de aceptación}
+\subsubsection{Criterios de Aceptación}
 \begin{itemize}
     \item Dado que quiero ver las compañías que actualmente tiene registrado el sistema, cuando esté en la vista correspondiente, entonces veré un listado de las compañías ordenadas por su nombre, y cada compañía tendrá el número de flotas registradas, número de vehículos registrados, número de viajes realizados, y número de reportes del total de viajes.
 \end{itemize}
 
-\subsection{Visualizar flotas}
+\subsection{Visualizar Flotas}
 \subsubsection{Descripción}
 Como Operador quiero en el dashboard la lista de flotas de mi compañía, para desde este lugar acceder a una flota y modificar su información o asociar un nuevo vehículo.
-\subsubsection{Criterios de aceptación}
+\subsubsection{Criterios de Aceptación}
 \begin{itemize}
     \item Dado que quiero ver la lista de flotas de mi compañía, cuando esté en la vista que me las lista, entonces veré las flotas paginadas con tamaños de 20 elementos, y cada flota tendrá enfrente el número de vehículos asociados a esta y el total de viajes completados por vehículos de la flota. 
 \end{itemize}
 
-\subsection{Visualizar vehículos de una flota}
+\subsection{Visualizar Vehículos de una Flota}
 \subsubsection{Descripción}
 Como Operador quiero visualizar los vehículos registrados de mi compañía para desde allí acceder a la información de un vehículo y poder consultarla o modificarla.
-\subsubsection{Criterios de aceptación}
+\subsubsection{Criterios de Aceptación}
 \begin{itemize}
     \item Dado que quiero visualizar los vehículos de mi compañía, cuando esté en la vista para visualizarlos, entonces veré cada uno de los vehículos con el número de kilómetros hechos por cada uno, número de viajes realizados, y fecha en la que se registró el vehículo en el sistema, y la flota a la que pertenecen.
 \end{itemize}
 
-\subsection{Visualizar vehículos en una flota}
+\subsection{Visualizar Vehículos en una Flota}
 \subsubsection{Descripción}
 Como Operador quiero visualizar en la página de una flota la lista de vehículos que están asociados a esta para modificarlos desde allí y ver información solamente relacionada con los vehículos de esa flota.  
-\subsubsection{Criterios de aceptación}
+\subsubsection{Criterios de Aceptación}
 \begin{itemize}
     \item Dado que estoy en la vista de una flota, cuando visualice la parte inferior de la vista, entonces veré el listado de vehículos de la flota y cada uno tendrá el número de viajes que ha realizado, fecha y hora de la próxima salida programada, fecha y hora de la llegada del último viaje que realizó, y si está realizando un viaje en ese momento, el progreso de ese viaje a ese momento según los últimos reportes de ubicación.
 \end{itemize}
 
-\subsection{Visualizar mapa de calor de viajes}
+\subsection{Visualizar Mapa de Calor de Viajes}
 \subsubsection{Descripción}
 Como Administrador quiero ver un mapa de calor de viajes realizados por compañías registradas en el sistema para tomar decisiones de negocio
 \subsubsection{Criterios de aceptación}
@@ -183,7 +182,7 @@ Como Administrador quiero ver un mapa de calor de viajes realizados por compañ�
     \item Dado que quiero ver el mapa de calor de viajes, cuando esté en la vista, puedo filtrar por fechas, viajes realizándose en ese momento, y compañías.
 \end{itemize}
 
-\section{Requisitos no funcionales}
+\section{Requisitos No Funcionales}
 
 \subsection{Resiliencia}
 Debe tener capacidad para sobreponerse a situaciones adversas.
@@ -194,7 +193,7 @@ El sistema debe estar en capacidad de crecer en magnitud a medida que se amplíe
 \subsection{Confiable}
 El sistema debe ser confiable en el sentido de tener alta disponibilidad y ausencia de errores críticos. Posibilidad de reiniciar las instancias. Verificar la Fiabilidad en la autenticación de los usuarios y la posibilidad de dar marcha atrás en la definición del perfil de cada usuario.
 
-\subsection{Interoperabilidad con alto rendimiento}
+\subsection{Interoperabilidad Con Alto Rendimiento}
 El sistema debe tener la capacidad de intercambiar información entre aplicaciones, y componentes internos, de forma eficiente.
 
 \subsection{Flexible}
@@ -206,7 +205,7 @@ El sistema debe tener tiempos de respuesta bajos, buenas latencia, y no quedarse
 \subsection{Adaptable}
 El sistema debe estar en la capacidad de adaptarse a cambios en el negocio y/o en las tecnologías en la que se implantó la solución inicialmente.
 
-\subsection{Internacionalización y localización}
+\subsection{Internacionalización y Localización}
 El sistema debe adaptarse a los diferentes idiomas y regiones sin la necesidad de realizar cambios de ingeniería ni en el código.
 
 \subsection{Seguridad} 
@@ -219,8 +218,8 @@ El sistema debe estar en la capacidad para ser usado en lugar de otro producto s
 El sistema debe evitar dependencias cíclicas entre clases y entre paquetes.
 
 \newpage
-\section{Presentación de las vistas de la arquitectura}
-\subsection{Diagrama de componentes o sub-dominios}
+\section{Presentación de las Vistas de la Arquitectura}
+\subsection{Diagrama de Componentes o Sub-dominios}
 
 \begin{center}
 \begin{figure}[h]
@@ -230,7 +229,7 @@ El sistema debe evitar dependencias cíclicas entre clases y entre paquetes.
     \large{Diagrama de Componentes o sub-dominios}
 \end{center}
 
-\subsection{Diagrama de clases y colaboraciones (modelo de dominio)}
+\subsection{Diagrama de Clases y Colaboraciones (Modelo de Dominio)}
 
 \begin{center}
     \includegraphics[scale=.15]{pics/c1.png}%
@@ -248,7 +247,7 @@ El sistema debe evitar dependencias cíclicas entre clases y entre paquetes.
     \includegraphics[scale=.15]{pics/c5.png}%
 \end{center}
 
-\subsection{Diagrama de paquetes}
+\subsection{Diagrama de Paquetes}
 \begin{center}
 \begin{figure}[h]
     \centering
@@ -257,17 +256,17 @@ El sistema debe evitar dependencias cíclicas entre clases y entre paquetes.
     \large{Diagrama de Paquetes}
 \end{center}
 
-
-\section{Fases o etapas del proyecto}
+\newpage
+\section{Fases o Etapas del Proyecto}
 El proyecto consta de las siguientes fases:
 
 \subsection{Inicio}
 La fase de inicio es crucial en el ciclo de vida del proyecto, ya que es el momento de definir el alcance y proceder a la selección del equipo.
 
-\subsection{Levantamiento de requerimientos}
+\subsection{Levantamiento de Requerimientos}
 Se levantan los requisitos iniciales, esto se hace a partir de conversaciones ricas con los expertos en dominio, de esta forma observamos y entendemos que quieren, y podremos plasmar esas ideas y modelos mentales en historias de usuario y diagramas del modelo de dominio, paquetes, componentes.
 
-\subsection{Empezar el desarrollo}
+\subsection{Empezar el Desarrollo}
 Siguiendo la metodología Scrum con ciclos iterativos de:
 \begin{enumerate}
     \item Planificación del sprint: En esta reunión se define la funcionalidad en el incremento planeado, de acuerdo al Product Backlog, y cómo el equipo de desarrollo creará este incremento y la salida de este trabajo es definir el objetivo del sprint.
