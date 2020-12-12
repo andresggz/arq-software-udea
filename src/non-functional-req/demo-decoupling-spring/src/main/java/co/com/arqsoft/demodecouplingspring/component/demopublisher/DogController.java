@@ -5,6 +5,8 @@ import co.com.arqsoft.demodecouplingspring.component.demopublisher.service.DogSe
 import co.com.arqsoft.demodecouplingspring.component.demopublisher.service.EmailService;
 import co.com.arqsoft.demodecouplingspring.component.demopublisher.service.model.DogCreatedEvent;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +23,8 @@ import javax.validation.constraints.NotNull;
 @RequiredArgsConstructor
 public class DogController {
 
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
     private final ApplicationEventPublisher publisher;
 
     private final DogServiceOne dogServiceOne;
@@ -32,7 +36,7 @@ public class DogController {
 
 
         DogCreatedEvent dogCreatedToPublish = DogSaveRequest.toModel(dogToCreate);
-        System.out.println("Dog created.");
+        logger.info("Dog created: name -> {}", dogCreatedToPublish.getName());
 
         dogServiceOne.handleGodCreated(dogCreatedToPublish);
         dogServiceTwo.handleGodCreated(dogCreatedToPublish);
