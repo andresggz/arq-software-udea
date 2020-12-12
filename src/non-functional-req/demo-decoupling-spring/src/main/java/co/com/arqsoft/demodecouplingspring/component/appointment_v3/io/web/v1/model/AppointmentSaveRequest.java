@@ -1,6 +1,5 @@
 package co.com.arqsoft.demodecouplingspring.component.appointment_v3.io.web.v1.model;
 
-import co.com.arqsoft.demodecouplingspring.component.appointment_v3.model.Appointment;
 import co.com.arqsoft.demodecouplingspring.component.appointment_v3.service.model.AppointmentSaveCmd;
 import lombok.*;
 

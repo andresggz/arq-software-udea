@@ -14,17 +14,17 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class Appointment {
+public class Appointment2 {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
 
-    @NotNull
-    private User doctor;
+  //  @NotNull
+  //  private User doctor;
 
-    @NotNull
-    private User patient;
+  //  @NotNull
+  //  private User patient;
 
     @NotNull
     private LocalDateTime scheduledFor;

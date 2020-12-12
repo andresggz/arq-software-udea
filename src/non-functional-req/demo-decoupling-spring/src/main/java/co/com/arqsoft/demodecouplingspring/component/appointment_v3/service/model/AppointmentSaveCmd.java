@@ -1,6 +1,6 @@
 package co.com.arqsoft.demodecouplingspring.component.appointment_v3.service.model;
 
-import co.com.arqsoft.demodecouplingspring.component.appointment_v3.model.Appointment;
+import co.com.arqsoft.demodecouplingspring.component.appointment_v3.model.Appointment3;
 import lombok.*;
 
 import javax.validation.constraints.NotNull;
@@ -23,8 +23,8 @@ public class AppointmentSaveCmd {
     private Long patientId;
 
 
-    public static Appointment toModel(AppointmentSaveCmd appointmentToCreate) {
-        return Appointment.builder().scheduledFor(appointmentToCreate.getScheduledFor())
+    public static Appointment3 toModel(AppointmentSaveCmd appointmentToCreate) {
+        return Appointment3.builder().scheduledFor(appointmentToCreate.getScheduledFor())
                 .build();
     }
 }

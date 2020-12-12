@@ -1,6 +1,6 @@
 package co.com.arqsoft.demodecouplingspring.component.appointment_v3.service;
 
-import co.com.arqsoft.demodecouplingspring.component.appointment_v3.model.Appointment;
+import co.com.arqsoft.demodecouplingspring.component.appointment_v3.model.Appointment3;
 import co.com.arqsoft.demodecouplingspring.component.appointment_v3.service.model.AppointmentSaveCmd;
 import co.com.arqsoft.demodecouplingspring.component.shared.web.exception.ConflictException;
 import co.com.arqsoft.demodecouplingspring.component.user.model.Role;
@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.constraints.NotNull;
 
-@Service
+@Service(value = "s3")
 @RequiredArgsConstructor
 @Transactional
 public class AppointmentServiceImpl implements AppointmentService{
@@ -31,10 +31,10 @@ public class AppointmentServiceImpl implements AppointmentService{
     private final AppointmentGateway appointmentGateway;
 
     @Override
-    public Appointment create(@NotNull AppointmentSaveCmd appointmentToCreateCmd) {
+    public Appointment3 create(@NotNull AppointmentSaveCmd appointmentToCreateCmd) {
         logger.debug("Begin create: appointmentToCreateCmd = {}", appointmentToCreateCmd);
 
-        final Appointment appointmentToCreate = AppointmentSaveCmd.toModel(appointmentToCreateCmd);
+        final Appointment3 appointmentToCreate = AppointmentSaveCmd.toModel(appointmentToCreateCmd);
 
         final User doctor = userService.findById(appointmentToCreateCmd.getDoctorId());
 
@@ -45,11 +45,11 @@ public class AppointmentServiceImpl implements AppointmentService{
         isPatient(patient);
 
         appointmentToCreate.toBuilder()
-                .doctor(doctor)
-                .patient(patient)
+                //.doctor(doctor)
+                //.patient(patient)
                 .build();
 
-        final Appointment appointmentCreated = appointmentGateway.save(appointmentToCreate);
+        final Appointment3 appointmentCreated = appointmentGateway.save(appointmentToCreate);
 
         logger.debug("End create: appointmentCreated = {}", appointmentCreated);
         return appointmentCreated;
