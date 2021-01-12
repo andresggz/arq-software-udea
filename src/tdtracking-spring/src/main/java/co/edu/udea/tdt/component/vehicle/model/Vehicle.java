@@ -33,11 +33,10 @@ public class Vehicle {
     @Size(min = 3, max = 700)
     private String description;
 
-    @Lob
     @NotNull
     @NotBlank
     @Size(min = 3)
-    private String detail;
+    private String licensePlate;
 
     private String iconId;
 

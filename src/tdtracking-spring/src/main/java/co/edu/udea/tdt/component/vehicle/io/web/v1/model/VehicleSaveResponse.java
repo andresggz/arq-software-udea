@@ -22,7 +22,7 @@ public class VehicleSaveResponse {
 
     private String description;
 
-    private String detail;
+    private String licensePlate;
 
     private String iconId;
 
@@ -41,8 +41,8 @@ public class VehicleSaveResponse {
     public static VehicleSaveResponse fromModel(Vehicle vehicle){
         return VehicleSaveResponse.builder().id(vehicle.getId())
                 .name(vehicle.getName()).description(vehicle.getDescription())
-                .detail(vehicle.getDetail()).iconId(vehicle.getIconId())
-                .active(vehicle.getActive()).detail(vehicle.getDetail())
+                .licensePlate(vehicle.getLicensePlate()).iconId(vehicle.getIconId())
+                .active(vehicle.getActive()).licensePlate(vehicle.getLicensePlate())
                 .createDate(vehicle.getCreateDate()).updateDate(vehicle.getUpdateDate())
                 .totalTrips(vehicle.getTripIds().size())
                 .build();

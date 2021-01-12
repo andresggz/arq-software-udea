@@ -20,7 +20,7 @@ public class VehicleListResponse {
 
     private String description;
 
-    private String detail;
+    private String licensePlate;
 
     private String iconId;
 
@@ -37,7 +37,7 @@ public class VehicleListResponse {
     public static VehicleListResponse fromModel(Vehicle vehicle){
         return VehicleListResponse.builder().id(vehicle.getId())
                 .name(vehicle.getName()).description(vehicle.getDescription())
-                .detail(vehicle.getDetail()).iconId(vehicle.getIconId())
+                .licensePlate(vehicle.getLicensePlate()).iconId(vehicle.getIconId())
                 .bannerId(vehicle.getBannerId())
                 .createDate(vehicle.getCreateDate())
                 .updateDate(vehicle.getUpdateDate())

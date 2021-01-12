@@ -24,15 +24,15 @@ public class VehicleSaveRequest {
     @Size(min = 3, max = 700, message = "Please enter at least {min} and at most {max} characters.")
     private String description;
 
-    @NotNull(message = "detail has to be present.")
-    @NotBlank(message = "detail can't be blank.")
+    @NotNull(message = "licensePlate has to be present.")
+    @NotBlank(message = "licensePlate can't be blank.")
     @Size(min = 3, message = "Please enter at least {min} characters.")
-    private String detail;
+    private String licensePlate;
 
     public static VehicleSaveCmd toModel(@NotNull VehicleSaveRequest vehicleToCreate){
         return VehicleSaveCmd.builder().name(vehicleToCreate.getName())
                 .description(vehicleToCreate.getDescription())
-                .detail(vehicleToCreate.getDetail())
+                .licensePlate(vehicleToCreate.getLicensePlate())
                 .build();
     }
 }

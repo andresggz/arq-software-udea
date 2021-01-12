@@ -36,7 +36,7 @@ public class VehicleControllerIT {
 
         VehicleSaveRequest vehicleToCreate = VehicleSaveRequest.builder()
                 .name("Back-end con Java").description("This is a description about our back-end with java vehicle")
-                .detail("This is our detail")
+                .licensePlate("This is our detail")
                 .build();
 
         var result = client.perform(post("/api/v1/vehicles")
@@ -50,7 +50,7 @@ public class VehicleControllerIT {
     void whenCreateAVehicleLackingNameSize_thenReturns400() throws Exception{
         VehicleSaveRequest vehicleToCreate = VehicleSaveRequest.builder()
                 .name("A").description("This is a description about our front-end vehicle")
-                .detail("This is our vehicle")
+                .licensePlate("This is our vehicle")
                 .build();
 
         var result = client.perform(post("/api/v1/vehicles")
@@ -63,7 +63,7 @@ public class VehicleControllerIT {
     @Test
     void whenFindAVehicleThatExists_thenReturns200() throws Exception{
         VehicleSaveRequest vehicleToCreate = VehicleSaveRequest.builder()
-                .name("Front-end con React").detail("This is a detail about").description("Description about Angular")
+                .name("Front-end con React").licensePlate("This is a detail about").description("Description about Angular")
                 .build();
         client.perform(post("/api/v1/vehicles")
                 .contentType("application/json")

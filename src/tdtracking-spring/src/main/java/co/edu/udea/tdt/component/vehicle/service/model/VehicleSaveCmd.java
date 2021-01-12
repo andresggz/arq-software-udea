@@ -27,12 +27,12 @@ public class VehicleSaveCmd {
     @NotNull
     @NotBlank
     @Size(min = 3)
-    private String detail;
+    private String licensePlate;
 
     public static Vehicle toModel(@NotNull VehicleSaveCmd vehicleToCreateCmd){
         return Vehicle.builder().name(vehicleToCreateCmd.getName())
                 .description(vehicleToCreateCmd.getDescription())
-                .detail(vehicleToCreateCmd.getDetail())
+                .licensePlate(vehicleToCreateCmd.getLicensePlate())
                 .build();
     }
 }
