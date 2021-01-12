@@ -28,7 +28,7 @@ public class TripEventPublisherImpl implements TripEventPublisher {
                 .builder().id(tripCreated.getId()).name(tripCreated.getName())
                 .description(tripCreated.getDescription())
                 .active(tripCreated.getActive())
-                .iconId(tripCreated.getIconId())
+                .iconId(tripCreated.getApproved())
                 .level(tripCreated.getLevel().name())
                 .build();
 

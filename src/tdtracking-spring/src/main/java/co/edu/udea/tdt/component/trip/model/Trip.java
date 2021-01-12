@@ -36,7 +36,7 @@ public class Trip {
     @NotNull
     private TripLevel level;
 
-    private String iconId;
+    private String approved;
 
     private Boolean active;
 

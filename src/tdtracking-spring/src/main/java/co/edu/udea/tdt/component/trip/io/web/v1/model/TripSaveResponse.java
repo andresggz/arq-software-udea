@@ -24,7 +24,7 @@ public class TripSaveResponse {
 
     private TripLevel level;
 
-    private String iconId;
+    private String approved;
 
     private Boolean active;
 
@@ -37,7 +37,7 @@ public class TripSaveResponse {
     public static TripSaveResponse fromModel(Trip trip){
         return TripSaveResponse.builder().id(trip.getId())
                 .name(trip.getName()).description(trip.getDescription())
-                .level(trip.getLevel()).iconId(trip.getIconId())
+                .level(trip.getLevel()).approved(trip.getApproved())
                 .active(trip.getActive()).releaseDate(trip.getReleaseDate())
                 .createDate(trip.getCreateDate()).updateDate(trip.getUpdateDate())
                 .build();
