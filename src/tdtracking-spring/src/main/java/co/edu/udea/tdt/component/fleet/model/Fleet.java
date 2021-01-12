@@ -33,8 +33,6 @@ public class Fleet {
     @Size(min = 3, max = 700)
     private String description;
 
-    private String iconId;
-
     private Boolean active;
 
     private LocalDateTime createDate;
