@@ -29,10 +29,16 @@ public class VehicleSaveRequest {
     @Size(min = 3, message = "Please enter at least {min} characters.")
     private String licensePlate;
 
+    private String model;
+
+    private String brand;
+
     public static VehicleSaveCmd toModel(@NotNull VehicleSaveRequest vehicleToCreate){
         return VehicleSaveCmd.builder().name(vehicleToCreate.getName())
                 .description(vehicleToCreate.getDescription())
                 .licensePlate(vehicleToCreate.getLicensePlate())
+                .model(vehicleToCreate.getModel())
+                .brand(vehicleToCreate.getBrand())
                 .build();
     }
 }

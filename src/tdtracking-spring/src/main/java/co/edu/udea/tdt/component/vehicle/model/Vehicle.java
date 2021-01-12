@@ -38,9 +38,9 @@ public class Vehicle {
     @Size(min = 3)
     private String licensePlate;
 
-    private String iconId;
+    private String model;
 
-    private String bannerId;
+    private String brand;
 
     private Boolean active;
 

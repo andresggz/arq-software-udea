@@ -24,9 +24,9 @@ public class VehicleSaveResponse {
 
     private String licensePlate;
 
-    private String iconId;
+    private String model;
 
-    private String bannerId;
+    private String brand;
 
     private Boolean active;
 
@@ -41,10 +41,10 @@ public class VehicleSaveResponse {
     public static VehicleSaveResponse fromModel(Vehicle vehicle){
         return VehicleSaveResponse.builder().id(vehicle.getId())
                 .name(vehicle.getName()).description(vehicle.getDescription())
-                .licensePlate(vehicle.getLicensePlate()).iconId(vehicle.getIconId())
+                .licensePlate(vehicle.getLicensePlate()).model(vehicle.getModel())
                 .active(vehicle.getActive()).licensePlate(vehicle.getLicensePlate())
                 .createDate(vehicle.getCreateDate()).updateDate(vehicle.getUpdateDate())
-                .totalTrips(vehicle.getTripIds().size())
+                .totalTrips(vehicle.getTripIds().size()).brand(vehicle.getBrand())
                 .build();
     }
 }

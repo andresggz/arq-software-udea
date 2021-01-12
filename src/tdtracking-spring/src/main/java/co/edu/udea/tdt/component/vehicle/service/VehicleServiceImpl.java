@@ -182,6 +182,8 @@ public class VehicleServiceImpl implements VehicleService {
                                 .name(dataFormatter.formatCellValue(row.getCell(0)))
                                 .description(dataFormatter.formatCellValue(row.getCell(1)))
                                 .licensePlate(dataFormatter.formatCellValue(row.getCell(2)))
+                                .model(dataFormatter.formatCellValue(row.getCell(3)))
+                                .brand(dataFormatter.formatCellValue(row.getCell(4)))
                                 .build());
             }
         }

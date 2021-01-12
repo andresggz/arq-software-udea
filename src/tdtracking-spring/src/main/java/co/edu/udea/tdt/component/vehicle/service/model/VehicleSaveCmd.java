@@ -29,10 +29,16 @@ public class VehicleSaveCmd {
     @Size(min = 3)
     private String licensePlate;
 
+    private String model;
+
+    private String brand;
+
     public static Vehicle toModel(@NotNull VehicleSaveCmd vehicleToCreateCmd){
         return Vehicle.builder().name(vehicleToCreateCmd.getName())
                 .description(vehicleToCreateCmd.getDescription())
                 .licensePlate(vehicleToCreateCmd.getLicensePlate())
+                .brand(vehicleToCreateCmd.getBrand())
+                .model(vehicleToCreateCmd.getModel())
                 .build();
     }
 }
