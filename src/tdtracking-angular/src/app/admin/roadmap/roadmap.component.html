@@ -17,12 +17,12 @@
           <div class="col px-0">
             <div class="row">
               <div class="col-lg-6">
-                <h1 class="display-3  text-white">Detalles de carrera</h1>
+                <h1 class="display-3  text-white">Detalles de flota</h1>
                 <h5 class="col-sm">Nombre: <span>{{careerInfo.name}}</span></h5>
                 <h5 class="col-sm">Descripción: <span>{{careerInfo.description}}</span></h5>
                 <h5 class="col-sm">Icono: <span>{{careerInfo.icon}}</span></h5>
                 <h5 class="col-sm">Activo: <span>Sí</span></h5>
-                <h5 class="col-sm">Número de rutas: <span>{{careerInfo.totalRoadmaps}}</span></h5>
+                <h5 class="col-sm">Número de vehiculos: <span>{{careerInfo.totalRoadmaps}}</span></h5>
                 <h5 class="col-sm">Creación: <span>{{careerInfo.createDate | date}}</span></h5>
                 <h5 class="col-sm">Actualizado: <span>{{careerInfo.updateDate | date}}</span></h5>
                 <div class="btn-wrapper">
@@ -94,9 +94,9 @@
                     <div class="card bg-gradient-secondary shadow">
                         <form [formGroup]="createRoadmapForm" (ngSubmit)="createRoadmap(createRoadmapForm.value)">
                         
-                            <div class="card-body p-lg-5">Crea rutas de aprendizaje
-                            <h4 class="mb-1">Para la carrera</h4>
-                            <p class="mt-0">debes ingresar su nombre, descripción y detalle</p>
+                            <div class="card-body p-lg-5">Crea vehiculo 
+                            <h4 class="mb-1">Para la flota</h4>
+                            <p class="mt-0">debes ingresar su nombre, descripción, placa, modelo y marca</p>
 
                                 <div class="form-group mt-5" [ngClass]="{'focused':focus===true}">
                                 <div class="input-group input-group-alternative">
@@ -122,10 +122,27 @@
                             </div>
 
                             <div class="form-group mb-4">
-                                <textarea formControlName="detail" class="form-control form-control-alternative" name="name" rows="4"
-                                    cols="80" placeholder="Detalle..."></textarea>
-                                    <div *ngIf="createRoadmapForm.get('detail').hasError('required') && createRoadmapForm.get('detail').touched" class="alert alert-danger">Debe ingresar un detalle</div>
-                                    <div *ngIf="createRoadmapForm.get('detail').hasError('minlength') && createRoadmapForm.get('detail').touched" class="alert alert-danger">Longitud mínima de 3 caracteres</div>                                    
+                                <textarea formControlName="description" class="form-control form-control-alternative" name="name" rows="4"
+                                    cols="80" placeholder="Descripción..."></textarea>
+                                    <div *ngIf="createRoadmapForm.get('description').hasError('required') && createRoadmapForm.get('description').touched" class="alert alert-danger">Debe ingresar una placa</div>
+                                    <div *ngIf="createRoadmapForm.get('description').hasError('minlength') && createRoadmapForm.get('description').touched" class="alert alert-danger">Longitud mínima de 3 caracteres</div>
+                                    <div *ngIf="createRoadmapForm.get('description').hasError('maxlength') && createRoadmapForm.get('description').touched" class="alert alert-danger">Longitud máxima de 700 caracteres</div>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <textarea formControlName="description" class="form-control form-control-alternative" name="name" rows="4"
+                                    cols="80" placeholder="Descripción..."></textarea>
+                                    <div *ngIf="createRoadmapForm.get('description').hasError('required') && createRoadmapForm.get('description').touched" class="alert alert-danger">Debe ingresar una modelo</div>
+                                    <div *ngIf="createRoadmapForm.get('description').hasError('minlength') && createRoadmapForm.get('description').touched" class="alert alert-danger">Longitud mínima de 3 caracteres</div>
+                                    <div *ngIf="createRoadmapForm.get('description').hasError('maxlength') && createRoadmapForm.get('description').touched" class="alert alert-danger">Longitud máxima de 700 caracteres</div>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <textarea formControlName="description" class="form-control form-control-alternative" name="name" rows="4"
+                                    cols="80" placeholder="Descripción..."></textarea>
+                                    <div *ngIf="createRoadmapForm.get('description').hasError('required') && createRoadmapForm.get('description').touched" class="alert alert-danger">Debe ingresar una marca</div>
+                                    <div *ngIf="createRoadmapForm.get('description').hasError('minlength') && createRoadmapForm.get('description').touched" class="alert alert-danger">Longitud mínima de 3 caracteres</div>
+                                    <div *ngIf="createRoadmapForm.get('description').hasError('maxlength') && createRoadmapForm.get('description').touched" class="alert alert-danger">Longitud máxima de 700 caracteres</div>
                             </div>
 
                             <div>
@@ -165,8 +182,8 @@
                 </div>
               </div>
               <div class="pl-4">
-                <h4 class="display-3 text-white">Rutas de aprendizaje</h4>
-                <p class="text-white">Estas son las rutas de aprendizaje registradas actualmente para esta carrera</p>
+                <h4 class="display-3 text-white">Vehiculos</h4>
+                <p class="text-white">Estos son los vehiculos actualmente registrados</p>
               </div>
             </div>
 
@@ -178,10 +195,10 @@
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripción</th>
-                <th scope="col">Detalle</th>
-                <th scope="col">Icono</th>
-                <th scope="col">Banner</th>
-                <th scope="col">Número de cursos</th>
+                <th scope="col">placa</th>
+                <th scope="col">modelo</th>
+                <th scope="col">marca</th>
+                <th scope="col">Número de viajes</th>
                 <th scope="col">Actualizado</th>
                 <th scope="col">Creación</th>
                 <th scope="col">Activo</th>

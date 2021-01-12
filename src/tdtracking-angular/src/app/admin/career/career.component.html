@@ -18,10 +18,10 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <h1 class="display-3  text-white">Administración de
-                                <span>carreras</span>
+                                <span>Flotas</span>
                             </h1>
-                            <p class="lead  text-white">En este panel de adminitración de carreras. Usted puede crear
-                                carreras y asociarles rutas de aprendizaje</p>
+                            <p class="lead  text-white">En este panel de adminitración de flotas. Usted puede crear
+                                flotas y asociarles vehiculos</p>
                             <div class="btn-wrapper">
                                 <a href="https://demos.creative-tim.com/argon-design-system-angular/documentation/alerts?ref=adsa-landing-page"
                                     class="btn btn-info btn-icon mb-3 mb-sm-0">
@@ -57,7 +57,7 @@
                             <form [formGroup]="createCareerForm" (ngSubmit)="createCareer(createCareerForm.value)">
                             
                                 <div class="card-body p-lg-5">
-                                <h4 class="mb-1">Para crear una carrera</h4>
+                                <h4 class="mb-1">Para crear una flota</h4>
                                 <p class="mt-0">Debes ingresar su nombre y descripción</p>
 
                                 <div class="form-group mt-5" [ngClass]="{'focused':focus===true}">
@@ -98,12 +98,6 @@
             </div>
     
          </section>
-   
-    
-
-            
-
-
 
             <!--esta es la seccion de la tabla de carreras-->
 
@@ -123,8 +117,8 @@
                           </div>
                         </div>
                         <div class="pl-4">
-                          <h4 class="display-3 text-white">Carreras</h4>
-                          <p class="text-white">Estas son las carreras registradas actualmente en el sistema</p>
+                          <h4 class="display-3 text-white">Flotas</h4>
+                          <p class="text-white">Estas son las flotas actualmente registradas</p>
                         </div>
                       </div>
 
@@ -136,7 +130,7 @@
                           <th scope="col">#</th>
                           <th scope="col">Nombre</th>
                           <th scope="col">Descripción</th>
-                          <th scope="col">Número de rutas</th>
+                          <th scope="col">Número de vehiculos</th>
                           <th scope="col">Actualizado</th>
                           <th scope="col">Creación</th>
                           <th scope="col">Activo</th>
@@ -151,8 +145,8 @@
                           </td>
                           <td>{{ career.description }}</td>
                           <td>{{ career.totalRoadmaps | number }}</td>
-                          <td>{{career.updateDate | date}}</td>
-                          <td>{{career.createDate | date}}</td>
+                          <td>{{ career.updateDate | date}}</td>
+                          <td>{{ career.createDate | date}}</td>
                           <td> Sí </td>
                           <td><a routerLink="/admin/carreras/{{career.id}}" class="btn btn-info btn-icon mb-3 mb-sm-0">Detalles</a> </td>
                           <td><a (click) = "deleteById(career.id)" class="btn btn-danger btn-icon mb-3 mb-sm-0">Eliminar</a> </td>
