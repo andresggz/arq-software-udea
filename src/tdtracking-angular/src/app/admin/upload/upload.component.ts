@@ -24,7 +24,7 @@ export class UploadComponent implements OnInit {
   upload() {
     let formData = new FormData();
       formData.append("file",this.uploadedFile);
-    this.serviceUpload.uploadFile(formData, '/api/v1/careers/upload-sheets').subscribe((res)=> {
+    this.serviceUpload.uploadFile(formData, '/api/v1/fleets/upload-sheets').subscribe((res)=> {
       console.log('response received is ', res);
       this.fileLoadedEvent.emit();
     });

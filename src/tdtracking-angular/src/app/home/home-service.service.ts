@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CareerListResponse } from './model/career-list.model';
+import { FleetListResponse } from './model/fleet-list.model';
 import { HttpClient } from '@angular/common/http';
 import { ResponsePagination } from './model/response-pagination-model';
 
@@ -15,9 +15,9 @@ export class HomeServiceService {
 
   }
 
-  getCareers(): Observable<ResponsePagination>{
+  getFleets(): Observable<ResponsePagination>{
     
-    return this.http.get<ResponsePagination>('http://localhost:8080/api/v1/careers');
+    return this.http.get<ResponsePagination>('http://localhost:8080/api/v1/fleets');
 
   }
 }

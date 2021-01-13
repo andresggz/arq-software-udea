@@ -8,21 +8,21 @@ import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
-import { CareerComponent } from './admin/career/career.component';
-import { CareerPageComponent } from './pages/career-page/career-page.component';
-import { RoadmapPageComponent } from './pages/roadmap-page/roadmap-page.component';
-import { RoadmapComponent } from './admin/roadmap/roadmap.component';
+import { FleetComponent } from './admin/fleet/fleet.component';
+import { FleetPageComponent } from './pages/fleet-page/fleet-page.component';
+import { VehicleComponent } from './admin/vehicle/vehicle.component';
+import { VehiclePageComponent } from './pages/vehicle-page/vehicle-page.component';
 
 const routes: Routes =[
-    { path: 'home',             component: HomeComponent },
-    { path: 'user-profile',     component: ProfileComponent },
-    { path: 'register',           component: SignupComponent },
-    { path: 'landing',          component: LandingComponent },
-    { path: 'login',          component: LoginComponent },
-    {path: 'carrera/:id', component: CareerPageComponent},
-    {path: 'ruta/:id', component: RoadmapPageComponent},
-    {path: 'admin/carreras', component: CareerComponent},
-    {path: 'admin/carreras/:id', component: RoadmapComponent},
+    { path: 'home', component: HomeComponent },
+    { path: 'user-profile', component: ProfileComponent },
+    { path: 'register', component: SignupComponent },
+    { path: 'landing', component: LandingComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'carrera/:id', component: FleetPageComponent },
+    { path: 'ruta/:id', component: VehiclePageComponent },
+    { path: 'admin/flotas', component: FleetComponent },
+    { path: 'admin/vehiculos', component: VehicleComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
@@ -37,4 +37,5 @@ const routes: Routes =[
   exports: [
   ],
 })
+
 export class AppRoutingModule { }

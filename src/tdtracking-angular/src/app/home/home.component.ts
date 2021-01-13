@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeServiceService } from './home-service.service';
-import { CareerListResponse } from './model/career-list.model';
+import { FleetListResponse } from './model/fleet-list.model';
 
 @Component({
     selector: 'app-home',
@@ -10,7 +10,7 @@ import { CareerListResponse } from './model/career-list.model';
 
 export class HomeComponent implements OnInit {
 
-    careersList: CareerListResponse[];
+    fleetsList: FleetListResponse[];
 
     model = {
         left: true,
@@ -23,10 +23,10 @@ export class HomeComponent implements OnInit {
     constructor(private readonly homeService: HomeServiceService) { }
 
     ngOnInit() {
-        //this.careersList = this.homeService.getCareers();
-        this.homeService.getCareers()
+        //this.fleetsList = this.homeService.getFleets();
+        this.homeService.getFleets()
             .subscribe(responsePagination => {
-                this.careersList = responsePagination.result;
+                this.fleetsList = responsePagination.result;
                 console.log(responsePagination);
             })
     }
