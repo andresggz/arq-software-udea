@@ -1,0 +1,214 @@
+<main>
+  <div class="position-relative">
+    <!-- shape Hero -->
+    <section class="section section-lg section-shaped pb-250">
+      <div class="shape shape-style-1 shape-default">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="container py-lg-md d-flex">
+        <div class="col px-0">
+          <div class="row">
+            <div class="col-lg-6">
+              <h1 class="display-3  text-white">Detalles de flota</h1>
+              <h5 class="col-sm">Nombre: <span>{{fleetInfo.name}}</span></h5>
+              <h5 class="col-sm">Descripción: <span>{{fleetInfo.description}}</span></h5>
+              <h5 class="col-sm">Activo: <span>Sí</span></h5>
+              <h5 class="col-sm">Número de vehículos: <span>{{fleetInfo.totalVehicles}}</span></h5>
+              <h5 class="col-sm">Creado: <span>{{fleetInfo.createDate | date}}</span></h5>
+              <h5 class="col-sm">Actualizado: <span>{{fleetInfo.updateDate | date}}</span></h5>
+              <div class="btn-wrapper">
+                <a href="https://demos.creative-tim.com/argon-design-system-angular/documentation/alerts?ref=adsa-landing-page" class="btn btn-info btn-icon mb-3 mb-sm-0">
+                  <span class="btn-inner--icon"><i class="fa fa-code"></i></span>
+                  <span class="btn-inner--text">Volver</span>
+                </a>
+                <a href="https://www.creative-tim.com/product/argon-design-system-angular?ref=adsa-landing-page" class="btn btn-white btn-icon mb-3 mb-sm-0">
+                  <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+                  <span class="btn-inner--text">¡Más info en PDF!</span>
+                </a>
+              </div>
+              <!--upload-->
+              <div class="uploadContainer">  
+                <div class="content">
+                  <div class="header">
+                  </div>
+                  <div class="row margin10">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span  class="input-group-text upload"  (click)="upload()"  id="btnUpload">Subir</span>
+                        </div>
+                        <div class="custom-file">
+                          <form action="/api/upload" method="post" enctype="multipart/form-data">
+                            <input (change)="fileChange($event)"  type="file"  class="custom-file-input"  id="inputGroupFile01"  aria-describedby="inputGroupFileAddon01"> 
+                          </form>
+                          <label class="custom-file-label" for="inputGroupFile01"></label>
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="col-md-4"></div>
+                  </div>
+                </div>
+              </div>
+              <!--upload-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SVG separator -->
+      <div class="separator separator-bottom separator-skew">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </section>
+    <!-- 1st Hero Variation -->
+  </div>
+  <!--Seccion para crear rutas de aprendizaje para esta carrera-->
+  <section class="section section-lg pt-lg-0 section-contact-us">
+    <div class="container">
+      <div class="row justify-content-center mt--300">
+        <div class="col-lg-8">
+          <div class="card bg-gradient-secondary shadow">
+            <form [formGroup]="createVehicleForm" (ngSubmit)="createVehicle(createVehicleForm.value)">
+              <div class="card-body p-lg-5">Crea vehículo <h4 class="mb-1">para la flota.</h4>
+                <p class="mt-0">Debe ingresar nombre, descripción, placa, modelo y marca.</p>
+                <div class="form-group mt-5" [ngClass]="{'focused':focus===true}">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-user-run"></i></span>
+                    </div>
+                    <input formControlName="name" class="form-control" placeholder="Nombre" type="text" (focus)="focus=true" (blur)="focus=false">
+                  </div>
+                  <div *ngIf="createVehicleForm.get('name').hasError('required') && createVehicleForm.get('name').touched" class="alert alert-danger">Debe ingresar un nombre</div>
+                  <div *ngIf="createVehicleForm.get('name').hasError('minlength') && createVehicleForm.get('name').touched" class="alert alert-danger">Longitud mínima de 3 caracteres</div>
+                  <div *ngIf="createVehicleForm.get('name').hasError('maxlength') && createVehicleForm.get('name').touched" class="alert alert-danger">Longitud máxima de 45 caracteres</div>
+                </div>
+                <div class="form-group mb-4">
+                  <textarea formControlName="description" class="form-control form-control-alternative" name="description" rows="4" cols="80" placeholder="Descripción..."></textarea>
+                  <div *ngIf="createVehicleForm.get('description').hasError('required') && createVehicleForm.get('description').touched" class="alert alert-danger">Debe ingresar una descripción</div>
+                  <div *ngIf="createVehicleForm.get('description').hasError('minlength') && createVehicleForm.get('description').touched" class="alert alert-danger">Longitud mínima de 3 caracteres</div>
+                  <div *ngIf="createVehicleForm.get('description').hasError('maxlength') && createVehicleForm.get('description').touched" class="alert alert-danger">Longitud máxima de 700 caracteres</div>
+                </div>
+                <div class="form-group mb-4">
+                  <textarea formControlName="licensePlate" class="form-control form-control-alternative" name="licensePlate" rows="4" cols="80" placeholder="Placa..."></textarea>
+                  <div *ngIf="createVehicleForm.get('licensePlate').hasError('required') && createVehicleForm.get('licensePlate').touched" class="alert alert-danger">Debe ingresar una placa</div>
+                  <div *ngIf="createVehicleForm.get('licensePlate').hasError('minlength') && createVehicleForm.get('licensePlate').touched" class="alert alert-danger">Longitud mínima de 3 caracteres</div>
+                  <div *ngIf="createVehicleForm.get('licensePlate').hasError('maxlength') && createVehicleForm.get('licensePlate').touched" class="alert alert-danger">Longitud máxima de 700 caracteres</div>
+                </div>
+                <div class="form-group mb-4">
+                  <textarea formControlName="model" class="form-control form-control-alternative" name="model" rows="4" cols="80" placeholder="Modelo..."></textarea>
+                  <div *ngIf="createVehicleForm.get('model').hasError('required') && createVehicleForm.get('model').touched" class="alert alert-danger">Debe ingresar una modelo</div>
+                  <div *ngIf="createVehicleForm.get('model').hasError('minlength') && createVehicleForm.get('model').touched" class="alert alert-danger">Longitud mínima de 3 caracteres</div>
+                  <div *ngIf="createVehicleForm.get('model').hasError('maxlength') && createVehicleForm.get('model').touched" class="alert alert-danger">Longitud máxima de 700 caracteres</div>
+                </div>
+                <div class="form-group mb-4">
+                  <textarea formControlName="brand" class="form-control form-control-alternative" name="brand" rows="4" cols="80" placeholder="Marca..."></textarea>
+                  <div *ngIf="createVehicleForm.get('brand').hasError('required') && createVehicleForm.get('brand').touched" class="alert alert-danger">Debe ingresar una marca</div>
+                  <div *ngIf="createVehicleForm.get('brand').hasError('minlength') && createVehicleForm.get('brand').touched" class="alert alert-danger">Longitud mínima de 3 caracteres</div>
+                  <div *ngIf="createVehicleForm.get('brand').hasError('maxlength') && createVehicleForm.get('brand').touched" class="alert alert-danger">Longitud máxima de 700 caracteres</div>
+                </div>
+                <div>
+                  <button [disabled]="createVehicleForm.invalid" type="submit" class="btn btn-default btn-round btn-block btn-lg">Crear</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--esta es la seccion de la tabla de carreras-->
+  <section class="section pb-0 bg-gradient-warning">
+    <div class="container">
+      <div class="row row-grid align-items-center">
+        <div class="col-md-6 order-lg-2 ml-lg-auto">
+          <div class="position-relative pl-md-5">
+            <img  class="img-center img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="d-flex px-3">
+            <div>
+              <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                <i class="ni ni-building text-primary"></i>
+              </div>
+            </div>
+            <div class="pl-4">
+              <h4 class="display-3 text-white">Vehículos</h4>
+              <p class="text-white">Estos son los vehículos actualmente registrados.</p>
+            </div>
+          </div>
+
+          <!--La tabla -->
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">placa</th>
+                <th scope="col">modelo</th>
+                <th scope="col">marca</th>
+                <th scope="col">Número de viajes</th>
+                <th scope="col">Actualizado</th>
+                <th scope="col">Creación</th>
+                <th scope="col">Activo</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let vehicle of vehiclesList; index as i">
+                <th scope="row">{{ vehicle.id }}</th>
+                <td>{{ vehicle.name }}</td>
+                <td>{{ vehicle.description }}</td>
+                <td>{{ vehicle.licensePlate }}</td>
+                <td>{{ vehicle.model }}</td>
+                <td>{{ vehicle.brand }}</td>
+                <td>{{ vehicle.totalTrips }}</td>
+                <td>{{ vehicle.updateDate | date}}</td>
+                <td>{{ vehicle.createDate | date}}</td>
+                <td> Sí </td>
+                <td><a class="btn btn-info btn-icon mb-3 mb-sm-0">Detalles</a> </td>
+                <td><a (click) = "deleteById(vehicle.id)" class="btn btn-danger btn-icon mb-3 mb-sm-0">Eliminar</a> </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="card shadow shadow-lg--hover mt-5">
+            <div class="card-body">
+              <div class="d-flex px-3">
+                <div>
+                  <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                    <i class="ni ni-satisfied"></i>
+                  </div>
+                </div>
+                <div class="pl-4">
+                  <h5 class="title text-success">Paginación</h5>
+                  <button (click) = "previousPage()" class="btn btn-warning btn-icon mb-3 mb-sm-0"> </button>
+                  <button (click) = "nextPage()" class="btn btn-warning btn-icon mb-3 mb-sm-0"> </button>
+                  <a href="javascript:void(0)" class="text-success">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew zindex-100">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <!--<app-sections></app-sections>-->
+</main>

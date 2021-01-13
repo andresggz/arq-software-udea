@@ -16,11 +16,11 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
-import { CareerComponent } from './admin/career/career.component';
-import { RoadmapComponent } from './admin/roadmap/roadmap.component';
-import { CareerPageComponent } from './pages/career-page/career-page.component';
-import { RoadmapPageComponent } from './pages/roadmap-page/roadmap-page.component';
-import { CareerAdminService } from './admin/career/career-admin.service';
+import { FleetComponent } from './admin/fleet/fleet.component';
+import { VehicleComponent } from './admin/vehicle/vehicle.component';
+import { FleetPageComponent } from './pages/fleet-page/fleet-page.component';
+import { VehiclePageComponent } from './pages/vehicle-page/vehicle-page.component';
+import { FleetAdminService } from './admin/fleet/fleet-admin.service';
 import { UploadComponent } from './admin/upload/upload.component';
 
 @NgModule({
@@ -32,10 +32,10 @@ import { UploadComponent } from './admin/upload/upload.component';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    CareerComponent,
-    RoadmapComponent,
-    CareerPageComponent,
-    RoadmapPageComponent,
+    FleetComponent,
+    VehicleComponent,
+    FleetPageComponent,
+    VehiclePageComponent,
     UploadComponent
   ],
   imports: [
@@ -48,7 +48,7 @@ import { UploadComponent } from './admin/upload/upload.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [CareerAdminService],
+  providers: [FleetAdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

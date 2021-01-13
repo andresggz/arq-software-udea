@@ -20,7 +20,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 text-center">
               <img src="./assets/img/brand/argon-white.png" style="width: 200px;" class="img-fluid">
-              <p class="lead text-white">Flotas, Vehiculos y Viajes</p>
+              <p class="lead text-white">Flotas, Vehículos y Viajes</p>
               <div class="btn-wrapper mt-5">
                 <a href="https://www.udea.edu.co" class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0" target="_blank">
                   <span class="btn-inner--text">Con ❤ desde la UdeA</span>
@@ -56,19 +56,19 @@
           <div class="col-lg-12">
             <div class="row row-grid">
 
-              <div class="col-lg-4" *ngFor="let career of careersList">
+              <div class="col-lg-4" *ngFor="let fleet of fleetsList">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
                     <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
                       <i class="ni ni-check-bold"></i>
                     </div>
-                    <h6 class="text-primary text-uppercase">{{career.name}}</h6>
-                    <p class="description mt-3">{{career.description}}</p>
+                    <h6 class="text-primary text-uppercase">{{fleet.name}}</h6>
+                    <p class="description mt-3">{{fleet.description}}</p>
                     <div>
-                      <span class="badge badge-pill badge-primary">Vehiculos: {{career.totalRoadmaps}}</span>
+                      <span class="badge badge-pill badge-primary">Vehículos: {{fleet.totalVehicles}}</span>
                       <span class="badge badge-pill badge-primary">Viajes: 230</span>
                     </div>
-                    <a routerLink="/carrera/{{career.id}}" class="btn btn-primary mt-4">¡Muéstrame más!</a>
+                    <a routerLink="/flotas/{{fleet.id}}" class="btn btn-primary mt-4">¡Muéstrame más!</a>
                   </div>
                 </div>
               </div>

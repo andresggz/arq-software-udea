@@ -1,8 +1,8 @@
-import { CareerListResponse } from "./career-list.model";
+import { FleetListResponse } from "./fleet-list.model";
 
-export interface ResponsePagination{
+export interface ResponsePagination {
     total: Number;
     page: number;
     returnedRecords: Number;
-    result: CareerListResponse[];
+    result: FleetListResponse[];
 }
