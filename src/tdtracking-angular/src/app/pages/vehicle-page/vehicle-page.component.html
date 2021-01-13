@@ -21,6 +21,9 @@
                   <span>{{vehicleInfo.name}}</span>
                 </h1>
                 <p class="lead  text-white">{{vehicleInfo.description}}</p>
+                <p class="lead  text-white">{{vehicleInfo.licensePlate}}</p>
+                <p class="lead  text-white">{{vehicleInfo.brand}}</p>
+                <p class="lead  text-white">{{vehicleInfo.model}}</p>
                 <div class="btn-wrapper">
                   <a href="https://demos.creative-tim.com/argon-design-system-angular/documentation/alerts?ref=adsa-landing-page" class="btn btn-info btn-icon mb-3 mb-sm-0">
                     <span class="btn-inner--icon"><i class="fa fa-code"></i></span>
@@ -51,20 +54,20 @@
             <div class="col-lg-12">
               <div class="row row-grid">
   
-                <div class="col-lg-4" *ngFor="let course of trips">
+                <div class="col-lg-4" *ngFor="let trip of trips">
                   <div class="card card-lift--hover shadow border-0">
                     <div class="card-body py-5">
                       <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
                         <i class="ni ni-check-bold"></i>
                       </div>
-                      <h6 class="text-primary text-uppercase">{{course.name}}</h6>
-                      <p class="description mt-3">{{course.description}}</p>
+                      <h6 class="text-primary text-uppercase">{{trip.name}}</h6>
+                      <p class="description mt-3">{{trip.description}}</p>
                       <div>
-                        <span class="badge badge-pill badge-primary">Última actualización: {{course.updateDate | date}}</span>
+                        <span class="badge badge-pill badge-primary">Última actualización: {{trip.updateDate | date}}</span>
                         <span class="badge badge-pill badge-primary">Viajes: 24</span>
-                        <span class="badge badge-pill badge-primary">Nivel: {{course.level}}</span>
+                        <span class="badge badge-pill badge-primary">Nivel: {{trip.level}}</span>
                       </div>
-                      <a routerLink="/curso/{{course.id}}" class="btn btn-primary mt-4">¡Quiero ver más!</a>
+                      <a routerLink="/viajes/{{trip.id}}" class="btn btn-primary mt-4">¡Quiero ver más!</a>
                     </div>
                   </div>
                 </div>

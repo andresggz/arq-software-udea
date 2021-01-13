@@ -12,6 +12,7 @@ export class VehicleAdminService {
   constructor(private readonly http: HttpClient) { }
 
   create(vehicleToCreate: VehicleSaveRequest): Observable<HttpResponse<object>>{
+    console.log(vehicleToCreate);
     return this.http.post('http://localhost:8080/api/v1/vehicles', vehicleToCreate, {observe: 'response'});
   }
 

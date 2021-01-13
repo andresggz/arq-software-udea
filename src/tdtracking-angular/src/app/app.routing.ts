@@ -19,10 +19,10 @@ const routes: Routes =[
     { path: 'register', component: SignupComponent },
     { path: 'landing', component: LandingComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'carrera/:id', component: FleetPageComponent },
-    { path: 'ruta/:id', component: VehiclePageComponent },
+    { path: 'flotas/:id', component: FleetPageComponent },
+    { path: 'vehiculos/:id', component: VehiclePageComponent },
     { path: 'admin/flotas', component: FleetComponent },
-    { path: 'admin/vehiculos', component: VehicleComponent },
+    { path: 'admin/flotas/:id', component: VehicleComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

@@ -32,7 +32,10 @@ export class VehicleComponent implements OnInit {
       {
         name: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(45)])],
         description: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(700)])],
-        detail: ['', Validators.compose([Validators.required, Validators.minLength(3)])]
+        licensePlate: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+        model: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+        brand: ['', Validators.compose([Validators.required, Validators.minLength(3)])]
+      
       }
     )
   }
